@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 
@@ -8,7 +8,7 @@ export default function RoomElement(props: { room: { name: string, counter: numb
     const [pin_consump, set_pin_consump] = useState([<></>])
 
     async function toggle_pin(url: string, state: boolean): Promise<void> {
-        let req = await axios.patch(url, { state });
+        await axios.patch(url, { state });
         fetch_all_sockets()
     }
 
