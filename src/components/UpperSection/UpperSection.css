@@ -1,0 +1,68 @@
+@media screen and (min-width: 993px) {
+    .upper-main {
+        max-height: 75vh;
+    }
+}
+
+
+main {
+    height: 75vh;
+    overflow: auto;
+}
+
+
+.right-aside {
+    margin: auto 0;
+    background-color: #232e42;
+}
+
+
+#left-aside a {
+    border: 0 !important;
+    color: #8093a5 !important;
+    border-radius: 0 5px 5px 0 !important;
+    padding: .8rem !important;
+    padding-left: 1.6rem !important;
+}
+
+#left-aside a.active {
+    border-left: .8rem solid #1f8efa !important;
+    padding-left: .8rem !important;
+
+    color: #1f8efa !important;
+    background-color: #1e293d !important;
+}
+
+
+main > aside {
+    background-color: #232e42;
+    color: #8592a3;
+    border-right: 2px solid #2f3b51;
+    transition: all 0.75s ease-in-out;
+}
+
+
+
+.arrow {
+    margin-left: -0.4em;
+    color: #2f3b51;
+}
+
+.hided-arrow {
+    /* margin-left: -2.7em; */
+    color: #2f3b51;
+}
+
+.d-hide {
+    width: 0;
+    overflow: hidden;
+}
+
+#left-aside .btn-left-aside {
+    cursor: pointer;
+}
+
+#left-aside .btn-left-aside:hover {
+    background-color: #1f8efa !important;
+    color: #FFF !important;
+}
