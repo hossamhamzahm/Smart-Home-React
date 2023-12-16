@@ -27,15 +27,15 @@ export default function RoomElement(props: { room: { name: string, counter: numb
 
             if (control_pin.state){
                 temp_pin_controllers.push(
-                    <div onClick={() => toggle_pin(control_pin._links.pin.href, !control_pin.state)} className="bi bi-lightbulb-off display-5 d-inline-block col-3"
-                    role="button">
+                <div onClick={() => toggle_pin(control_pin._links.pin.href, !control_pin.state)} className="bi bi-lightbulb display-5 d-inline-block col-3" role="button">
                     <div className="d-none"> </div>
                     <p className="fs-5">Turn off lights</p>
                 </div>)
             }
             else{
                 temp_pin_controllers.push(
-                    <div onClick={() => toggle_pin(control_pin._links.pin.href, !control_pin.state)} className="bi bi-lightbulb display-5 d-inline-block col-3" role="button">
+                    <div onClick={() => toggle_pin(control_pin._links.pin.href, !control_pin.state)} className="bi bi-lightbulb-off display-5 d-inline-block col-3"
+                    role="button">
                     <div className="d-none"> </div>
                     <p className="fs-5">Turn on lights</p>
                 </div>)
@@ -43,7 +43,7 @@ export default function RoomElement(props: { room: { name: string, counter: numb
 
             try{
                 let consumption_pin = (await axios.get(socket._links.consumption_pin.href)).data
-                temp_pin_consump.push(<span className="btn btn-primary rounded-pill extra-small-btn mt-2">Consumption: {consumption_pin.consumption} KW</span>)
+                temp_pin_consump.push(<span className="btn btn-primary rounded-pill extra-small-btn mt-2">Consumption: {consumption_pin.consumption} W</span>)
             }
             catch(e: unknown){
                 console.log("Catched")
@@ -55,7 +55,7 @@ export default function RoomElement(props: { room: { name: string, counter: numb
     }
 
     useEffect(() =>{
-        fetch_all_sockets()
+        setInterval(fetch_all_sockets, 1000)
     }, [])
     
     return <>
